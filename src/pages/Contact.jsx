@@ -7,7 +7,7 @@ export default function Contact() {
     return (
         <>
             <Header />
-            <HeaderPages title="با ترخینه در تماس باشید." bgimg="bg-[url(../public/img/png/contact-header.jpeg)]" />
+            <HeaderPages title="با ترخینه در تماس باشید." bgimg="bg-[url(/img/png/contact-header.jpeg)]" />
             <main className='container my-12 flex flex-col gap-y-6'>
                 <BranchBoxPage title="شعبه اکباتان" src="/img/png/branch-img-2.jpeg" address="آدرس: شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم" phone="۰۲۱-۵۴۸۹۱۲۵۰-۵۱" />
                 <BranchBoxPage title="شعبه چالوس" src="/img/png/branch-img-4.jpeg" address="آدرس: چالوس، خیابان ۱۷ شهریور، جنب داروخانه دکتر میلانی" phone="۰۲۱-۵۴۸۹۱۲۵۲-۵۳" />
