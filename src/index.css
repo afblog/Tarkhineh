@@ -1,0 +1,276 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Estedad Medium";
+    src: url(../public/fonts/Estedad-Medium.woff2) format(woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Estedad Bold";
+    src: url(../public/fonts/Estedad-Bold.woff2) format(woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Estedad Black";
+    src: url(../public/fonts/Estedad-Black.woff2) format(woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Estedad ExtraBold";
+    src: url(../public/fonts/Estedad-ExtraBold.woff2) format(woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Estedad ExtraLight";
+    src: url(../public/fonts/Estedad-ExtraLight.woff2) format(woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Estedad Light";
+    src: url(../public/fonts/Estedad-Light.woff2) format(woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Estedad Regular";
+    src: url(../public/fonts/Estedad-Regular.woff2) format(woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Estedad SemiBold";
+    src: url(../public/fonts/Estedad-SemiBold.woff2) format(woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Estedad Thin";
+    src: url(../public/fonts/Estedad-Thin.woff2) format(woff2);
+    font-display: swap;
+  }
+}
+
+@layer components {
+  .rtl {
+    text-align: right;
+    direction: rtl;
+  }
+
+  .ltr {
+    text-align: left;
+    direction: ltr;
+    unicode-bidi: bidi-override;
+  }
+
+  .activeInput {
+    border: 0.8px solid #e1e1e1;
+  }
+
+  .errorInput {
+    border: 0.8px solid #ed2e2e;
+  }
+
+  .active {
+    color: #417f56;
+    border-bottom: 1px solid #417f56;
+    @apply font-EstedadRegular md:font-EstedadBold text-base md:text-base lg:text-xl;
+  }
+
+  .header_menu-mobile {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../public/img/png/mobail-header-menu.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* Input Style */
+
+  input[type="number"].appearance ::-webkit-outer-spin-button,
+  input[type="number"].appearance::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"].appearance {
+    -moz-appearance: textfield;
+  }
+
+  /* about home page stayle */
+
+  .about {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../public//Img/png/about-home-page.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  footer {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../public/Img/png/footer-bg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .textarea {
+    resize: none;
+  }
+
+  .site_loader {
+    background-image: url(../public/Img/svg/site-loader-pattern.svg);
+    background-position: center;
+    background-size: contain;
+  }
+
+  .active_menu-item {
+    @apply font-EstedadBold text-Primary border-b-2;
+  }
+
+  .payment {
+    background-image: url(../public/Img/svg/site-loader-pattern-green.svg);
+  }
+
+  /* Slider Style */
+
+  .slide_1,
+  .slide_2,
+  .slide_3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .slide_1 {
+    background-image: linear-gradient(
+        rgba(33, 64, 43, 0.5),
+        rgba(0, 0, 0, 0.55)
+      ),
+      url("../public//Img/png/slider-img-1.jpeg");
+  }
+
+  .slide_2 {
+    background-image: linear-gradient(
+        rgba(33, 64, 43, 0.5),
+        rgba(0, 0, 0, 0.55)
+      ),
+      url("../public//Img/png/slider-img-2.jpeg");
+  }
+
+  .slide_3 {
+    background-image: linear-gradient(
+        rgba(33, 64, 43, 0.5),
+        rgba(0, 0, 0, 0.55)
+      ),
+      url("../public//Img/png/slider-img-3.jpeg");
+  }
+
+  .swiper-pagination {
+    height: 2rem;
+    bottom: -1px !important;
+    z-index: 999 !important;
+    background-image: url("../public/Img/svg/shape-slider.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 5px;
+  }
+
+  .swiper-pagination-bullet {
+    background: #adadad !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .swiper-pagination-bullet-active {
+    width: 16px !important;
+    height: 16px !important;
+    background: #417f56 !important;
+    box-shadow: 0 0 0 2px #e5f2e9;
+  }
+
+  @media (max-width: 776px) {
+    .swiper-pagination {
+      background-image: url("../public/Img/svg/shape-slider-mobail.svg");
+    }
+
+    .swiper-pagination-bullet {
+      width: 8px !important;
+      height: 8px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 12px !important;
+      height: 12px !important;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-in-out;
+  }
+}
+
+@theme {
+  --font-EstedadMedium: "Estedad Medium";
+  --font-EstedadBold: "Estedad Bold";
+  --font-EstedadBlack: "Estedad Black";
+  --font-EstedadExtraBold: "Estedad ExtraBold";
+  --font-EstedadExtraLight: "Estedad ExtraLight";
+  --font-EstedadLight: "Estedad Light";
+  --font-EstedadRegular: "Estedad Regular";
+  --font-EstedadSemiBold: "Estedad SemiBold";
+  --font-EstedadThin: "Estedad Thin";
+
+  --color-Tint-1: #e5f2e9;
+  --color-Tint-2: #cae4d3;
+  --color-Tint-3: #b0d7bd;
+  --color-Tint-4: #96c9a7;
+  --color-Tint-5: #7cbc91;
+  --color-Tint-6: #61ae7b;
+  --color-Tint-7: #4e9968;
+  --color-Primary: #417f56;
+  --color-Shade-1: #396f4b;
+  --color-Shade-2: #315f41;
+  --color-Shade-3: #294f36;
+  --color-Shade-4: #21402b;
+  --color-Shade-5: #183020;
+  --color-Shade-6: #102016;
+  --color-Shade-7: #08100b;
+  --color-Gray-1: #f9f9f9;
+  --color-Gray-2: #e1e1e1;
+  --color-Gray-3: #ededed;
+  --color-Gray-4: #cbcbcb;
+  --color-Gray-5: #adadad;
+  --color-Gray-6: #757575;
+  --color-Gray-7: #717171;
+  --color-Gray-8: #353535;
+  --color-Black: #0c0c0c;
+  --color-Error: #c30000;
+  --color-Errorlight: #ed2e2e;
+  --color-ErrorExtralight: #fff2f2;
+  --color-Success: #00966d;
+  --color-Successlight: #00ba88;
+  --color-SuccessExtralight: #f3fdfa;
+  --color-Warning: #a9791c;
+  --color-WarningLight: #f4b740;
+  --color-WarningExtralight: #fff8e1;
+
+  --shadow-loginBox: 0px 0px 6px 0px #00000026;
+  --shadow-header: 0px 0px 10px 0px #00000026;
+
+  --breakpoint-xs: 395px;
+}
