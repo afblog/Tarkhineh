@@ -205,7 +205,7 @@ export default function Profile() {
                     <div className='w-1/4 h-[342px] py-4 px-2 border border-solid border-Gray-4 rounded-lg'>
                         <div className='flex items-center gap-x-6'>
                             <div className='w-20 border border-solid border-Gray-4 rounded-full'>
-                                <img className='w-full' src="/img/png/profile-img.png" alt="" />
+                                <img className='w-full' src="/Img/png/profile-img.png" alt="" />
                             </div>
                             <div className='flex flex-col gap-y-1'>
                                 <p className='text-base font-EstedadRegular text-Gray-8'>کاربر ترخینه</p>
@@ -326,7 +326,7 @@ export default function Profile() {
                         isUserAddress && (
                             <div className='relative h-[495px] flex flex-col items-center justify-center w-3/4 py-4 px-2 border border-solid border-Gray-4 rounded-lg'>
                                 <div className='w-[325px] h-[313px] absolute -z-10'>
-                                    <img className='w-full h-full' src="/img/svg/shoppingCart-img.svg" alt="Shoppin Cart Empty" />
+                                    <img className='w-full h-full' src="/Img/svg/shoppingCart-img.svg" alt="Shoppin Cart Empty" />
                                 </div>
                                 <p className='font-EstedadRegular text-sm md:text-xl text-Gray-6 mb-8'>شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!</p>
                                 <button onClick={addressBtnHandler} className='py-1.5 px-12 border border-solid border-Primary rounded-sm text-base font-EstedadMedium text-Primary hover:text-white hover:bg-Primary transition-all cursor-pointer'>افزودن آدرس</button>
@@ -337,7 +337,7 @@ export default function Profile() {
                 <div className='flex flex-col lg:hidden'>
                     <div className='flex items-center gap-x-2 sm:gap-x-6'>
                         <div className='w-12 sm:w-20 border border-solid border-Gray-4 rounded-full'>
-                            <img className='w-full' src="/img/png/profile-img.png" alt="" />
+                            <img className='w-full' src="/Img/png/profile-img.png" alt="" />
                         </div>
                         <div className='flex flex-col gap-y-1'>
                             <p className='text-sm sm:text-base font-EstedadRegular text-Gray-8'>کاربر ترخینه</p>
@@ -455,7 +455,7 @@ export default function Profile() {
                         isUserAddress && (
                             <div className='relative h-[256px] w-full flex flex-col items-center justify-center py-4 px-2 border border-solid border-Gray-4 rounded-lg mt-6'>
                                 <div className='w-[200px] h-[193px] absolute -z-10'>
-                                    <img className='w-full h-full' src="/img/svg/shoppingCart-img.svg" alt="Shoppin Cart Empty" />
+                                    <img className='w-full h-full' src="/Img/svg/shoppingCart-img.svg" alt="Shoppin Cart Empty" />
                                 </div>
                                 <p className='font-EstedadRegular text-sm text-Gray-6 mb-8'>شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!</p>
                                 <button onClick={addressBtnHandler} className='py-1.5 px-10 border border-solid border-Primary rounded-sm text-sm font-EstedadMedium text-Primary hover:text-white hover:bg-Primary transition-all cursor-pointer'>افزودن آدرس</button>

@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <Header />
-      <HeaderPages title="درباره ترخینه بیشتر بدانید!" bgimg="bg-[url(/img/png/about-header.jpeg)]" />
+      <HeaderPages title="درباره ترخینه بیشتر بدانید!" bgimg="bg-[url(/Img/png/about-header.jpeg)]" />
       <main>
         <div className='container rtl my-4 md:my-12'>
           <div className='hidden md:block'>

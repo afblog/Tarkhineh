@@ -82,7 +82,7 @@
 
   .header_menu-mobile {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-      url("/img/png/mobail-header-menu.jpeg");
+      url("/Img/png/mobail-header-menu.jpeg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@
 
   .about {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-      url("../public//Img/png/about-home-page.jpeg");
+      url("../public/Img/png/about-home-page.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

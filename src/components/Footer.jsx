@@ -57,7 +57,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <Link to='/'>
-                    <img className='hidden md:block xl:hidden w-80' src="/img/svg/site-logo-withe.svg" alt="Site Logo" />
+                    <img className='hidden md:block xl:hidden w-80' src="/Img/svg/site-logo-withe.svg" alt="Site Logo" />
                 </Link>
                 <form action="#" className='hidden xl:block text-white'>
                     <div className='flex items-end justify-between gap-x-7'>

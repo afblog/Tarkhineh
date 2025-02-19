@@ -105,7 +105,7 @@ export default function Header() {
                 <div className='container'>
                     <div className='rtl hidden md:flex items-center justify-between'>
                         <Link to='/'>
-                            <img className='w-[150px] lg:w-[188px]' src="/img/svg/site-logo.svg" alt="Site Logo" />
+                            <img className='w-[150px] lg:w-[188px]' src="/Img/svg/site-logo.svg" alt="Site Logo" />
                         </Link>
                         <div className='flex gap-x-3 h-16 lg:gap-x-6 items-center font-EstedadRegular text-Gray-7 lg:text-xl tracking-tighter'>
                             <NavLink to='/' className={`${({ isActive }) => (isActive ? "active" : "")} p-1 hover:text-Primary`}>صفحه اصلی</NavLink>
@@ -246,7 +246,7 @@ export default function Header() {
                             </g>
                         </svg>
                         <Link to='/'>
-                            <img className='w-[102px] md:w-[150px] lg:w-[188px]' src="/img/svg/site-logo.svg" alt="Site Logo" />
+                            <img className='w-[102px] md:w-[150px] lg:w-[188px]' src="/Img/svg/site-logo.svg" alt="Site Logo" />
                         </Link>
                         <div className='flex items-center gap-x-1'>
                             <Link to='/shoppingcart' className={`relative p-1 lg:p-2  ${isShappingCartPage ? "bg-Primary" : "bg-Tint-1"} rounded-sm`}>
