@@ -18,14 +18,14 @@ export default function About() {
                 </p>
                 <p>چشم انداز: در آینده‌ای نزدیک تالار پذیرایی شعبات راه اندازی شده و آماده برگزاری جشن‌ها و مراسم‌های بزرگ شما خواهند بود . به امید آن روز که همه ایرانیان سالم و سلامت باشند.</p>
               </div>
-              <img className='w-1/2 h-[420px] xl:h-[492px] rounded-md' src="/img/png/about-page-img2.jpeg" alt="" />
+              <img className='w-1/2 h-[420px] xl:h-[492px] rounded-md' src="/Img/png/about-page-img2.jpeg" alt="" />
             </div>
           </div>
           <div className='block md:hidden'>
             <h4 className='font-EstedadBold text-Gray-8 text-start mb-1'>درباره‌ما</h4>
             <div className='flex items-center gap-x-5 justify-between sm:justify-center'>
               <p className='text-sm font-EstedadRegular text-justify'>رستوران‌های زنجیره‌ای ترخینه در سال ۱۳۶۸ افتتاح گردیده‌اند و در طی این سال‌ها همواره با ارائه غذاهای باکیفیت و سرویس سریع و به موقع در تلاش برای جلب رضایت مشتریان خود بوده‌اند. در طی این سال‌ها اولویت جلب رضایت مشتریان بوده است. </p>
-              <img className='min-w-[152px] 3:h-40 sm:h-[120px] rounded-md' src="/img/png/about-page-img2.jpeg" alt="" />
+              <img className='min-w-[152px] 3:h-40 sm:h-[120px] rounded-md' src="/Img/png/about-page-img2.jpeg" alt="" />
             </div>
             <div className='text-sm font-EstedadRegular text-justify mt-2'>
               <p>دراین خصوص ترخینه همیشه در تلاش بوده تا در طی این زمان‌ها کیفیت غذاهای خود را در بهترین حالت نگه داشته و حتی با نوسانات قیمت‌های مواد اولیه در بازار قیمت خود را ثابت نگه داشته است. ترخینه شعبات خودرا افتتاح کرده که بسیار شیک و مدرن می‌باشند و برای برگزاری جشن‌های کوچک و بزرگ شما مشتریان عزیز توانایی پذیرایی با کیفیت بالا را دارند. سالن پذیرایی شعبات در دو طبقه مجزا به همراه راه پله مدرن و آسانسور برای افراد کم‌توان و سالخورده آماده ارائه سرویس به شما عزیزان می‌باشند.</p>
