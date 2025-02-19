@@ -105,7 +105,7 @@ export default function Header() {
                 <div className='container'>
                     <div className='rtl hidden md:flex items-center justify-between'>
                         <Link to='/'>
-                            <img className='w-[150px] lg:w-[188px]' src="../public/img/svg/site-logo.svg" alt="Site Logo" />
+                            <img className='w-[150px] lg:w-[188px]' src="/img/svg/site-logo.svg" alt="Site Logo" />
                         </Link>
                         <div className='flex gap-x-3 h-16 lg:gap-x-6 items-center font-EstedadRegular text-Gray-7 lg:text-xl tracking-tighter'>
                             <NavLink to='/' className={`${({ isActive }) => (isActive ? "active" : "")} p-1 hover:text-Primary`}>صفحه اصلی</NavLink>
@@ -246,7 +246,7 @@ export default function Header() {
                             </g>
                         </svg>
                         <Link to='/'>
-                            <img className='w-[102px] md:w-[150px] lg:w-[188px]' src="../public/img/svg/site-logo.svg" alt="Site Logo" />
+                            <img className='w-[102px] md:w-[150px] lg:w-[188px]' src="/img/svg/site-logo.svg" alt="Site Logo" />
                         </Link>
                         <div className='flex items-center gap-x-1'>
                             <Link to='/shoppingcart' className={`relative p-1 lg:p-2  ${isShappingCartPage ? "bg-Primary" : "bg-Tint-1"} rounded-sm`}>
@@ -375,7 +375,7 @@ export default function Header() {
                             <rect x="5.31348" y="7.41406" width="2" height="16" rx="1" transform="rotate(-45 5.31348 7.41406)" fill="white" />
                             <rect x="16.3135" y="6" width="2" height="16" rx="1" transform="rotate(45 16.3135 6)" fill="white" />
                         </svg>
-                        <img className='my-auto' src="../public/img/svg/site-logo-withe.svg" alt="Site Logo" />
+                        <img className='my-auto' src="/img/svg/site-logo-withe.svg" alt="Site Logo" />
                     </div>
 
                     <div className='flex flex-col rtl items-end gap-y-3 text-sm px-4 font-EstedadRegular mt-2'>

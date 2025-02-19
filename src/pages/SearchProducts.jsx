@@ -93,7 +93,7 @@ export default function SearchProducts() {
                             </div>
                         ) : (
                             products.length === 0 ? (
-                                <img className='sm:w-80 w-72 h-72 sm:h-80 md:w-auto md:h-auto' src="../public/img/svg/searchbar-img.svg" alt="Search Not Found" />
+                                <img className='sm:w-80 w-72 h-72 sm:h-80 md:w-auto md:h-auto' src="/img/svg/searchbar-img.svg" alt="Search Not Found" />
                             ) : (
                                 <>
                                     <div className='min-h-56 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6'>
