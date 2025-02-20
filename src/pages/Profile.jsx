@@ -45,13 +45,6 @@ export default function Profile() {
         );
     };
 
-    const getAllUsers = async () => {
-        const response = await fetch('https://tarkhine-test1.liara.run/auth/users/')
-        const data = response.json()
-        console.log(data);
-
-    }
-
     const {
         isUserProfil,
         isUserOrder,
@@ -101,30 +94,29 @@ export default function Profile() {
 
     const editUserData = async (e) => {
         e.preventDefault()
-        // try {
-        //     const response = await fetch('https://tarkhine-test1.liara.run/auth/users/me/', {
-        //         method: 'PATCH',
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify(editedUser)
-        //     })
-        //     if (!response.ok) {
-        //         throw new Error
-        //     } else {
-        //         setIsEditeUser(false)
-        //         getUserData()
-        //         setIsAlert('success')
-        //         setAlertMsg('اطلاعات با موفقیت بروز شدن')
-        //     }
-        // } catch (err) {
-        //     if (err.message === 'Failed to fetch') {
-        //         setIsAlert('error')
-        //         setAlertMsg('مشکلی در ارتباط با سرور رخ داده است')
-        //     }
-        // }
-        getAllUsers()
-        
+        try {
+            const response = await fetch('https://tarkhine-test1.liara.run/auth/users/me/', {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(editedUser)
+            })
+
+            if (!response.ok) {
+                throw new Error
+            } else {
+                setIsEditeUser(false)
+                getUserData()
+                setIsAlert('success')
+                setAlertMsg('اطلاعات با موفقیت بروز شدن')
+            }
+        } catch (err) {
+            if (err.message === 'Failed to fetch') {
+                setIsAlert('error')
+                setAlertMsg('مشکلی در ارتباط با سرور رخ داده است')
+            }
+        }
     }
 
     useEffect(() => {
@@ -179,7 +171,10 @@ export default function Profile() {
                                         }
                                     </p>
                                 </div>
-                                <div className='absolute z-20 bottom-24 md:bottom-5 left-0 right-0 flex items-center justify-center'>
+                                <div onClick={() => {
+                                    setIsAlert('warning')
+                                    setAlertMsg('این قابلیت به زودی در دسترس است')
+                                }} className='absolute z-20 bottom-24 md:bottom-5 left-0 right-0 flex items-center justify-center'>
                                     <button className='text-white bg-Primary text-base font-EstedadMedium py-1.5 px-20 rounded-sm cursor-pointer'>ثبت موقعیت</button>
                                 </div>
                                 <button onClick={goToUserLocation} className='absolute z-20 top-8 right-6 bg-white py-1.5 px-6 rounded-sm flex items-center gap-x-1 font-EstedadMedium text-base text-Primary cursor-pointer'>
@@ -208,8 +203,8 @@ export default function Profile() {
                                 <img className='w-full' src="/Img/png/profile-img.png" alt="" />
                             </div>
                             <div className='flex flex-col gap-y-1'>
-                                <p className='text-base font-EstedadRegular text-Gray-8'>کاربر ترخینه</p>
-                                <span className='text-xs font-EstedadRegular text-Gray-7'>abolfaz@gmail.com</span>
+                                <p className='text-base font-EstedadRegular text-Gray-8'>{user.first_name} {user.last_name}</p>
+                                <span className='text-xs font-EstedadRegular text-Gray-7'>{user.email}</span>
                             </div>
                         </div>
                         <div className='w-full h-px bg-Gray-6 my-2'></div>
@@ -273,7 +268,6 @@ export default function Profile() {
                                                 <input type="text" onChange={(e) => setEditedUser(prev => ({ ...prev, first_name: e.target.value }))} value={editedUser.first_name || ""} className='w-full py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام' />
                                                 <input type="text" onChange={(e) => setEditedUser(prev => ({ ...prev, last_name: e.target.value }))} value={editedUser.last_name || ""} className='w-full py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام خانوادگی' />
                                                 <input type="text" onChange={(e) => setEditedUser(prev => ({ ...prev, email: e.target.value }))} value={editedUser.email || ""} className='w-full py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='آدرس ایمیل' />
-                                                <input type="text" onChange={(e) => setEditedUser(prev => ({ ...prev, username: e.target.value }))} value={editedUser.username || ""} className='w-full py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام کاربری' />
                                                 <div className='flex items-center gap-x-4 col-span-2 justify-self-end'>
                                                     <button onClick={(e) => {
                                                         e.preventDefault()
@@ -319,7 +313,9 @@ export default function Profile() {
                     }
                     {
                         isUserInterests && (
-                            <div className='w-3/4 h-[342px] py-4 px-2 border border-solid border-Gray-4 rounded-lg'></div>
+                            <div className='flex items-center justify-center w-3/4 h-[495px] p-6 border border-solid border-Gray-4 rounded-lg'>
+                                <h3 className='font-EstedadBold text-2xl text-Primary'>بزودی ...</h3>
+                            </div>
                         )
                     }
                     {
@@ -340,8 +336,8 @@ export default function Profile() {
                             <img className='w-full' src="/Img/png/profile-img.png" alt="" />
                         </div>
                         <div className='flex flex-col gap-y-1'>
-                            <p className='text-sm sm:text-base font-EstedadRegular text-Gray-8'>کاربر ترخینه</p>
-                            <span className='text-xs font-EstedadRegular text-Gray-7'>abolfaz@gmail.com</span>
+                            <p className='text-sm sm:text-base font-EstedadRegular text-Gray-8'>{user.first_name} {user.last_name}</p>
+                            <span className='text-xs font-EstedadRegular text-Gray-7'>{user.email}</span>
                         </div>
                     </div>
                     <div className='w-full h-px bg-Gray-6 my-2'></div>
@@ -400,12 +396,9 @@ export default function Profile() {
                                     {
                                         isEditeUser ? (
                                             <>
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام' />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام خانوادگی' />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='آدرس ایمیل' />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='شماره تماس' />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='تاریخ تولد' />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام کاربری' />
+                                                <input type="text" onChange={(e) => setEditedUser(prev => ({ ...prev, first_name: e.target.value }))} value={editedUser.first_name || ""} className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام' />
+                                                <input type="text" onChange={(e) => setEditedUser(prev => ({ ...prev, last_name: e.target.value }))} value={editedUser.last_name || ""} className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام خانوادگی' />
+                                                <input type="text" onChange={(e) => setEditedUser(prev => ({ ...prev, email: e.target.value }))} value={editedUser.email || ""} className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='آدرس ایمیل' />
                                                 <div className='w-full flex items-center gap-x-4'>
                                                     <button onClick={(e) => {
                                                         e.preventDefault()
@@ -413,19 +406,17 @@ export default function Profile() {
                                                     }} className='w-full py-1.5 mt-2 rounded-sm cursor-pointer text-base font-EstedadMedium text-Primary border border-solid border-Primary'>
                                                         انصراف
                                                     </button>
-                                                    <button className='w-full py-1.5 mt-2 rounded-sm cursor-pointer text-base font-EstedadMedium text-white bg-Primary'>
+                                                    <button onClick={editUserData} className='w-full py-1.5 mt-2 rounded-sm cursor-pointer text-base font-EstedadMedium text-white bg-Primary'>
                                                         ذخیره اطلاعات
                                                     </button>
                                                 </div>
                                             </>
                                         ) : (
                                             <>
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام' readOnly />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام خانوادگی' readOnly />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='آدرس ایمیل' readOnly />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='شماره تماس' readOnly />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='تاریخ تولد' readOnly />
-                                                <input type="text" className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام کاربری' readOnly />
+                                                <input type="text" value={user.first_name || ""} className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام' readOnly />
+                                                <input type="text" value={user.last_name || ""} className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام خانوادگی' readOnly />
+                                                <input type="text" value={user.email || ""} className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='آدرس ایمیل' readOnly />
+                                                <input type="text" value={user.username || ""} className='w-full sm:w-[400px] py-2 px-4 text-Gray-8 font-EstedadRegular border border-solid border-Gray-4 rounded-sm outline-none placeholder:font-EstedadRegular placeholder:text-sm cursor-auto' placeholder='نام کاربری' readOnly />
                                                 <button onClick={(e) => {
                                                     e.preventDefault()
                                                     setIsEditeUser(true)
@@ -446,6 +437,13 @@ export default function Profile() {
                     }
                     {
                         isUserOrder && (
+                            <div className='w-full flex items-center justify-center h-40 p-6 border border-solid border-Gray-4 rounded-lg mt-5'>
+                                <h3 className='font-EstedadBold text-base sm:text-2xl text-Primary'>بزودی ...</h3>
+                            </div>
+                        )
+                    }
+                    {
+                        isUserInterests && (
                             <div className='w-full flex items-center justify-center h-40 p-6 border border-solid border-Gray-4 rounded-lg mt-5'>
                                 <h3 className='font-EstedadBold text-base sm:text-2xl text-Primary'>بزودی ...</h3>
                             </div>
