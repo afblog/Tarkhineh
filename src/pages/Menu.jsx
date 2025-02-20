@@ -75,7 +75,6 @@ export default function Menu() {
   }
 
   const handleKeyDown = (event) => {
-    event.preventDefault();
     if (event.key === "Enter") {
       sessionStorage.setItem('search-value', searchInputValue)
       navigate('/searchbar')

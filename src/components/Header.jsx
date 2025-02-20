@@ -80,7 +80,6 @@ export default function Header() {
     }
 
     const handleKeyDown = (event) => {
-        event.preventDefault();
         if (event.key === "Enter") {
             sessionStorage.setItem('search-value', searchInputValue)
             navigate('/searchbar')

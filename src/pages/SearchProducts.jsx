@@ -51,7 +51,6 @@ export default function SearchProducts() {
     }
 
     const handleKeyDown = (event) => {
-        event.preventDefault();
         if (event.key === "Enter") {
             fetcher()
         }
