@@ -8,7 +8,7 @@ import { GlobalContext } from '../Contexts/GlobalContext'
 import { useContext } from 'react'
 
 export default function SearchProducts() {
-    const { isAlert, alertMsg, setIsAlert, setAlertMsg, addToCart} = useContext(GlobalContext)
+    const { isAlert, alertMsg, setIsAlert, setAlertMsg, addToCart } = useContext(GlobalContext)
 
     const [isLoader, setIsLoader] = useState(false)
 
@@ -51,6 +51,7 @@ export default function SearchProducts() {
     }
 
     const handleKeyDown = (event) => {
+        event.preventDefault();
         if (event.key === "Enter") {
             fetcher()
         }

@@ -33,6 +33,7 @@ export default function Home() {
   }
 
   const handleKeyDown = (event) => {
+    event.preventDefault();
     if (event.key === "Enter") {
       sessionStorage.setItem('search-value', searchInputValue)
       navigate('/searchbar')
