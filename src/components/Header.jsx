@@ -375,7 +375,7 @@ export default function Header() {
                             <rect x="5.31348" y="7.41406" width="2" height="16" rx="1" transform="rotate(-45 5.31348 7.41406)" fill="white" />
                             <rect x="16.3135" y="6" width="2" height="16" rx="1" transform="rotate(45 16.3135 6)" fill="white" />
                         </svg>
-                        <img className='my-auto' src="/img/svg/site-logo-withe.svg" alt="Site Logo" />
+                        <img className='my-auto' src="/Img/svg/site-logo-withe.svg" alt="Site Logo" />
                     </div>
 
                     <div className='flex flex-col rtl items-end gap-y-3 text-sm px-4 font-EstedadRegular mt-2'>
