@@ -110,7 +110,7 @@ export default function Menu() {
                     {
                       MainCourse.iranianCuisine.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox product={item} title={item.title} description={item.description} src={item.src} price={item.price} discount={item.discount} />
+                          <MenuPageBox product={item} title={item.title} description={item.description} src={item.src} price={item.price} discount={item.discount} percent={item.percent} />
                         </div>
                       ))
                     }
@@ -121,20 +121,12 @@ export default function Menu() {
                   <TitleMenuBox title="غذاهای غیر ایرانی" />
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      nonIranianFoods.length > 0 ? (
-                        nonIranianFoods.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+
+                      MainCourse.nonIranianFoods.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                        </div>
+                      ))
                     }
                   </div>
                 </div>
@@ -143,20 +135,11 @@ export default function Menu() {
                   <TitleMenuBox title="پیتزاها" />
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      pizzas.length > 0 ? (
-                        pizzas.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+                      MainCourse.pizzas.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                        </div>
+                      ))
                     }
                   </div>
                 </div>
@@ -165,20 +148,11 @@ export default function Menu() {
                   <TitleMenuBox title="ساندویچ‌ها" />
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      sandwiches.length > 0 ? (
-                        sandwiches.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+                      MainCourse.sandwiches.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent}/>
+                        </div>
+                      ))
                     }
                   </div>
                 </div>

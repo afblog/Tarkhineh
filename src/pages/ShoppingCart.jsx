@@ -45,7 +45,7 @@ export default function ShoppingCart() {
                                 cart.length === 0 ? (
                                     <div className='relative flex flex-col gap-y-4 md:gap-y-9 items-center justify-center w-full h-[373px] md:h-[422px] border border-solid border-Gray-4 rounded-lg'>
                                         <div className='w-[200px] h-[193px] md:w-[325px] md:h-[313px] absolute -z-10'>
-                                            <img className='w-full h-full' src="./public/Img/svg/shoppingCart-img.svg" alt="Shoppin Cart Empty" />
+                                            <img className='w-full h-full' src="/Img/svg/shoppingCart-img.svg" alt="Shoppin Cart Empty" />
                                         </div>
                                         <p className='font-EstedadRegular text-sm md:text-xl text-Gray-6'>شما در حال حاضر هیچ سفارشی ثبت نکرده‌اید!</p>
                                         <Link to="/menu" onClick={() => mainCourseHandler()} className='py-1.5 px-10 md:px-12 border border-solid border-Primary rounded-sm text-sm md:text-base font-EstedadMedium text-Primary hover:text-white hover:bg-Primary transition-all cursor-pointer'>منوی رستوران</Link>

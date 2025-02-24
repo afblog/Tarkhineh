@@ -13,7 +13,7 @@ export default function Login({ children }) {
             <div className='fixed inset-0 bg-sky-500/4 z-10'>
                 <div className='flex px-4 py-6 flex-col justify-center items-center h-full'>
                     <Link to='/' className='inline-block w-40 md:w-60 mb-5 md:mb-10'>
-                        <img src="./public/Img/svg/site-logo.svg" alt="Site Logo" />
+                        <img src="/Img/svg/site-logo.svg" alt="Site Logo" />
                     </Link>
                     {children}
                     <p className='max-w-[330px] font-EstedadRegular text-sm md:text-base/loose text-Black mt-5 sm:mt-8 text-center'>با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات <span className='text-Success font-EstedadMedium'>ترخینه</span> را پذیرفته اید</p>

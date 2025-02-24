@@ -3,7 +3,7 @@ import { GlobalContext } from '../Contexts/GlobalContext';
 import { useState } from 'react';
 import Alert from './Alert';
 
-export default function MenuPageBox({ title, src, price, description, discount, product }) {
+export default function MenuPageBox({ title, src, price, description, discount, product, percent }) {
 
     const { addToCart, isAlert, setIsAlert, alertMsg } = useContext(GlobalContext)
 
@@ -12,6 +12,7 @@ export default function MenuPageBox({ title, src, price, description, discount, 
     const toPersianDigits = (num) => num.toLocaleString("fa-IR");
 
     const closeAlert = () => setIsAlert(null)
+
 
     return (
         <>
@@ -34,12 +35,12 @@ export default function MenuPageBox({ title, src, price, description, discount, 
                             </svg>
                             <div className='flex lg:hidden items-center gap-x-2'>
                                 {
-                                    discount && (
+                                    discount && percent ? (
                                         <>
                                             <del className='text-Gray-4 text-[10px] md:text-sm font-EstedadRegular lg:text-base'>{toPersianDigits(discount)}</del>
-                                            <span className='text-xs text-Error bg-ErrorExtralight px-1 rounded-full'>٪۳۵</span>
+                                            <span className='text-xs text-Error bg-ErrorExtralight px-1 rounded-full'>٪{toPersianDigits(percent)}</span>
                                         </>
-                                    )
+                                    ) : ""
                                 }
                             </div>
                         </>
@@ -50,10 +51,10 @@ export default function MenuPageBox({ title, src, price, description, discount, 
                             <div>
                                 <div className='hidden lg:flex items-center gap-x-2'>
                                     {
-                                        discount ? (
+                                        discount && percent ? (
                                             <>
                                                 <del className='text-Gray-4 text-base'>{toPersianDigits(discount)}</del>
-                                                <span className='text-xs text-Error bg-ErrorExtralight px-1 rounded-full'>٪۳۵</span>
+                                                <span className='text-xs text-Error bg-ErrorExtralight px-1 rounded-full'>٪{toPersianDigits(percent)}</span>
                                             </>
                                         ) : ""
                                     }
