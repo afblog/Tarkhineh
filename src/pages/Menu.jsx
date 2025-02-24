@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState, useContext } from 'react'
 import Footer from '../components/Footer'
 import { GlobalContext } from '../Contexts/GlobalContext'
+import { MainCourse } from '../products'
 
 export default function Menu() {
 
@@ -41,33 +42,6 @@ export default function Menu() {
   const [sandwiches, setSandwiches] = useState([])
 
   const [searchInputValue, setSearchInputValue] = useState("")
-
-  async function mainCourseItems() {
-    try {
-      setLoading(true)
-      const response = await fetch(`https://tarkhine-test1.liara.run/store/categoriesfull/`);
-      const data = await response.json();
-      if (Array.isArray(data) && data.length >= 4) {
-        if (data[0].title === 'main course') {
-          setIranianCuisine(data[0].product_models[0].products)
-          setNonIranianFoods(data[0].product_models[1].products)
-          setPizzas(data[0].product_models[2].products)
-          setSandwiches(data[0].product_models[3].products)
-          setLoading(false)
-        }
-      } else {
-        setIsAlert('error');
-        setAlertMsg("محصولی یافت نشد");
-      }
-    } catch (err) {
-      setIsAlert('error');
-      setAlertMsg('مشکلی در دریافت اطلاعات از سرور رخ داده است');
-    }
-  }
-
-  useEffect(() => {
-    mainCourseItems()
-  }, [])
 
   const searchBoxHandler = () => {
     sessionStorage.setItem('search-value', searchInputValue)
@@ -134,20 +108,11 @@ export default function Menu() {
                   </TitleMenuBox>
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      iranianCuisine.length > 0 ? (
-                        iranianCuisine.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+                      MainCourse.iranianCuisine.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox product={item} title={item.title} description={item.description} src={item.src} price={item.price} discount={item.discount} />
+                        </div>
+                      ))
                     }
                   </div>
                 </div>

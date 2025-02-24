@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import InputElem from '../components/InputElem'
 import { GlobalContext } from '../Contexts/GlobalContext'
 import { useContext } from 'react'
-import Cookies from "js-cookie";
 
 export default function Login() {
 
@@ -81,9 +80,6 @@ export default function Login() {
                     setAlertMsg('کاربری با این مشخصات یافت نشد')
                     setIsLoader(false)
                 } else {
-                    Cookies.set('accessToken', result.access, { secure: true, sameSite: "Strict", expires: 1 })
-                    Cookies.set('refreshToken', result.refresh, { secure: true, sameSite: "Strict" })
-
                     setIsLoader(false)
                     setIsAlert('success')
                     setAlertMsg('لاگین با موفقیت انجام شد')

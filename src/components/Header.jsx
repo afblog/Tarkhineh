@@ -6,7 +6,6 @@ import { useEffect } from 'react'
 import Alert from './Alert'
 import { GlobalContext } from '../Contexts/GlobalContext'
 import BoxGlobal from './BoxGlobal'
-import Cookies from "js-cookie";
 
 export default function Header() {
 
@@ -43,37 +42,6 @@ export default function Header() {
     const isSearchPage = location.pathname === '/searchbar'
     const isProfilePage = location.pathname === '/profile'
 
-
-    async function fetchData() {
-        if (Cookies.get('accessToken')) {
-            setIsLogin(true)
-        } else if (Cookies.get('refreshToken')) {
-            const refreshToken = Cookies.get('refreshToken');
-
-            const response = await fetch('https://tarkhine-test1.liara.run/auth/jwt/refresh', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ refresh: refreshToken })
-            })
-
-            if (!response.ok) {
-                navigate('/login')
-            }
-
-            const data = await response.json()
-            Cookies.set('accessToken', data.access);
-
-        } else {
-            setIsLogin(false)
-        }
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
-
     const searchBoxHandler = () => {
         sessionStorage.setItem('search-value', searchInputValue)
         navigate('/searchbar')
@@ -106,7 +74,7 @@ export default function Header() {
                 <div className='container'>
                     <div className='rtl hidden md:flex items-center justify-between'>
                         <Link to='/'>
-                            <img className='w-[150px] lg:w-[188px]' src="/Img/svg/site-logo.svg" alt="Site Logo" />
+                            <img className='w-[150px] lg:w-[188px]' src="./public/Img/svg/site-logo.svg" alt="Site Logo" />
                         </Link>
                         <div className='flex gap-x-3 h-16 lg:gap-x-6 items-center font-EstedadRegular text-Gray-7 lg:text-xl tracking-tighter'>
                             <NavLink to='/' className={`${({ isActive }) => (isActive ? "active" : "")} p-1 hover:text-Primary`}>صفحه اصلی</NavLink>

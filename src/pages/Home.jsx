@@ -62,19 +62,19 @@ export default function Home() {
                 <h3 className='font-EstedadBold text-base md:text-2xl text-Gray-8 text-center mb-22 sm:mb-44'>منوی رستوران</h3>
                 <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-30 sm:gap-y-56 gap-x-6'>
                   <div className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
-                    <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="/Img/svg/menu-img-4.svg" alt="" />
+                    <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="./public/Img/svg/menu-img-4.svg" alt="" />
                     <Link to="/menu" onClick={mainCourseHandler} className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>غذای اصلی</Link>
                   </div>
                   <div className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
-                    <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="/Img/svg/menu-img-3.svg" alt="" />
+                    <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="./public/Img/svg/menu-img-3.svg" alt="" />
                     <Link to="/menu" onClick={appetizerHandler} className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>پیش غذا</Link>
                   </div>
                   <div className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
-                    <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="/Img/svg/menu-img-2.svg" alt="" />
+                    <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="./public/Img/svg/menu-img-2.svg" alt="" />
                     <Link to="/menu" onClick={dessertHandler} className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>دسر</Link>
                   </div>
                   <div className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
-                    <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-48' src="/Img/svg/menu-img-1.svg" alt="" />
+                    <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-48' src="./public/Img/svg/menu-img-1.svg" alt="" />
                     <Link to="/menu" onClick={drinkHandler} className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>نوشیدنی</Link>
                   </div>
                 </div>
@@ -138,10 +138,10 @@ export default function Home() {
               <section className='container mt-6 md:mt-12 text-center'>
                 <h3 className='text-base md:text-2xl font-EstedadExtraBold text-Gray-8 mb-3 md:mb-6'>ترخینه گردی</h3>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-3 md:gap-x-0 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-                  <BranchBox src="/Img/png/branch-img-2.jpeg" title="شعبه اکباتان" description="شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم" />
-                  <BranchBox src="/Img/png/branch-img-4.jpeg" title="شعبه چالوس" description="چالوس، خیابان ۱۷ شهریور، بعد کوچه کوروش، جنب داروخانه دکتر میلانی" />
-                  <BranchBox src="/Img/png/branch-img-1.jpeg" title="شعبه اقدسیه" description="خیابان اقدسیه ، نرسیده به میدان خیام، پلاک ۸" />
-                  <BranchBox src="/Img/png/branch-img-3.png" title="شعبه ونک" description="میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک ۲۶" />
+                  <BranchBox src="./public/Img/png/branch-img-2.jpeg" title="شعبه اکباتان" description="شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم" />
+                  <BranchBox src="./public/Img/png/branch-img-4.jpeg" title="شعبه چالوس" description="چالوس، خیابان ۱۷ شهریور، بعد کوچه کوروش، جنب داروخانه دکتر میلانی" />
+                  <BranchBox src="./public/Img/png/branch-img-1.jpeg" title="شعبه اقدسیه" description="خیابان اقدسیه ، نرسیده به میدان خیام، پلاک ۸" />
+                  <BranchBox src="./public/Img/png/branch-img-3.png" title="شعبه ونک" description="میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک ۲۶" />
                 </div>
               </section>
             </main>

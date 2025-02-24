@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { createContext, useState } from "react";
-import Cookies from "js-cookie";
 
 export const GlobalContext = createContext();
 
@@ -107,24 +106,6 @@ export function GlobalContextProvider({ children }) {
     setIsAppetizer(true)
     setIsDessert(false)
     setIsDrink(false)
-    try {
-      setLoading(true)
-      const response = await fetch(`https://tarkhine-test1.liara.run/store/categoriesfull/`);
-      const data = await response.json();
-      if (Array.isArray(data) && data.length >= 4) {
-        if (data[1].title === "Appetizer") {
-          setAppetizerProducts(data[1].product_models[0].products)
-          setNonIranianAppetizer(data[1].product_models[1].products)
-          setLoading(false)
-        }
-      } else {
-        setIsAlert('error');
-        setAlertMsg("محصولی یافت نشد");
-      }
-    } catch (err) {
-      setIsAlert('error');
-      setAlertMsg('مشکلی در دریافت اطلاعات از سرور رخ داده است');
-    }
   }
 
   const dessertHandler = async () => {
@@ -132,25 +113,6 @@ export function GlobalContextProvider({ children }) {
     setIsAppetizer(false)
     setIsDessert(true)
     setIsDrink(false)
-
-    try {
-      setLoading(true)
-      const response = await fetch(`https://tarkhine-test1.liara.run/store/categoriesfull/`);
-      const data = await response.json();
-      if (Array.isArray(data) && data.length >= 4) {
-        if (data[2].title === "Dessert") {
-          setIranianDessert(data[2].product_models[0].products)
-          setNonIranianDessert(data[2].product_models[1].products)
-          setLoading(false)
-        }
-      } else {
-        setIsAlert('error');
-        setAlertMsg("محصولی یافت نشد");
-      }
-    } catch (err) {
-      setIsAlert('error');
-      setAlertMsg('مشکلی در دریافت اطلاعات از سرور رخ داده است');
-    }
   }
 
   const drinkHandler = async () => {
@@ -158,32 +120,11 @@ export function GlobalContextProvider({ children }) {
     setIsAppetizer(false)
     setIsDessert(false)
     setIsDrink(true)
-
-    try {
-      setLoading(true)
-      const response = await fetch(`https://tarkhine-test1.liara.run/store/categoriesfull/`);
-      const data = await response.json();
-      if (Array.isArray(data) && data.length >= 4) {
-        if (data[3].title === "Drink") {
-          setIranianDrink(data[3].product_models[0].products)
-          setNonIraniandrink(data[3].product_models[1].products)
-          setLoading(false)
-        }
-      } else {
-        setIsAlert('error');
-        setAlertMsg("محصولی یافت نشد");
-      }
-    } catch (err) {
-      setIsAlert('error');
-      setAlertMsg('مشکلی در دریافت اطلاعات از سرور رخ داده است');
-    }
   }
 
   const toPersianDigits = (num) => num.toLocaleString("fa-IR");
 
   const logoutHandler = () => {
-    Cookies.remove("accessToken");
-    Cookies.remove("refreshToken");
     setIsLogin(false)
     setIsAlert('success')
     setAlertMsg('از حساب خود خارج شدید')
