@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <Header />
-      <HeaderPages title="درباره ترخینه بیشتر بدانید!" bgimg="bg-[url(./public/Img/png/about-header.jpeg)]" />
+      <HeaderPages title="درباره ترخینه بیشتر بدانید!" bgimg="bg-[url(/Img/png/about-header.jpeg)]" />
       <main>
         <div className='container rtl my-4 md:my-12'>
           <div className='hidden md:block'>
@@ -18,7 +18,7 @@ export default function About() {
                 </p>
                 <p>چشم انداز: در آینده‌ای نزدیک تالار پذیرایی شعبات راه اندازی شده و آماده برگزاری جشن‌ها و مراسم‌های بزرگ شما خواهند بود . به امید آن روز که همه ایرانیان سالم و سلامت باشند.</p>
               </div>
-              <img className='w-1/2 h-[420px] xl:h-[492px] rounded-md' src="./public/Img/png/about-page-img2.jpeg" alt="" />
+              <img className='w-1/2 h-[420px] xl:h-[492px] rounded-md' src="/Img/png/about-page-img2.jpeg" alt="" />
             </div>
           </div>
           <div className='block md:hidden'>
