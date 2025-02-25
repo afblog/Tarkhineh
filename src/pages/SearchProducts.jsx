@@ -1,77 +1,68 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Alert from '../components/Alert'
 import SearchBox from '../components/SearchBox'
 import GridLoader from 'react-spinners/GridLoader'
 import { GlobalContext } from '../Contexts/GlobalContext'
 import { useContext } from 'react'
+import { mainCourse, appetizer, dessert, drink } from '../products'
 
 export default function SearchProducts() {
-    const { isAlert, alertMsg, setIsAlert, setAlertMsg, addToCart } = useContext(GlobalContext)
+    const { addToCart } = useContext(GlobalContext)
 
     const [isLoader, setIsLoader] = useState(false)
 
-    const [products, setProducts] = useState([])
+    const [filterProducts, setFilterProducts] = useState([])
 
     const [searchInputValue, setSearchInputValue] = useState(() => sessionStorage.getItem('search-value') || "")
 
-    async function fetcher() {
+    const allProducts = [
+        ...mainCourse.iranianCuisine,
+        ...mainCourse.nonIranianFoods,
+        ...mainCourse.pizzas,
+        ...mainCourse.sandwiches,
+        ...appetizer.iranianAppetizer,
+        ...appetizer.nonIranianAppetizer,
+        ...dessert.iranianDessert,
+        ...dessert.nonIranianDessert,
+        ...drink.iranianDrink
+    ];
+
+    function search() {
         if (!searchInputValue.trim()) return;
 
-        try {
-            setIsLoader(true)
-            const response = await fetch(`https://tarkhine-test1.liara.run/store/products/?search=${searchInputValue}`)
+        setIsLoader(true)
 
-            const data = await response.json()
-            setProducts(data)
-
-            if (sessionStorage.getItem("search-value")) {
-                sessionStorage.removeItem('search-value')
-            }
-
-            setIsLoader(false)
-
-        } catch (error) {
-            if (error.message === 'Failed to fetch') {
-                setIsLoader(false)
-                setIsAlert('error')
-                setAlertMsg('مشکلی در ارتباط با سرور رخ داده است')
-            }
+        if (sessionStorage.getItem("search-value")) {
+            sessionStorage.removeItem('search-value')
         }
+        setIsLoader(false)
 
+        setFilterProducts(allProducts.filter((product) => product.title.includes(searchInputValue)))
     }
 
     useEffect(() => {
-        fetcher()
+        search()
     }, [])
 
     const searchBoxHandler = () => {
-        fetcher()
+        search()
     }
 
     const handleKeyDown = (event) => {
         if (event.key === "Enter") {
             event.preventDefault();
-            fetcher()
+            search()
         }
     }
 
-    const closeAlert = () => setIsAlert(null)
-
     return (
         <>
-            {
-                isAlert === 'error' && (<Alert message={alertMsg} type='error' onClose={closeAlert} />)
-            }
-            {
-                isAlert === 'success' && (<Alert message={alertMsg} type='success' onClose={closeAlert} />)
-            }
             <Header />
             <section className='flex flex-col items-center justify-center rtl w-full my-12'>
                 <>
                     {
-                        products.length === 0 ? (
+                        filterProducts.length === 0 ? (
                             <span className='text-lg sm:text-xl font-EstedadRegular text-Gray-8 mb-5'> موردی با این مشخصات پیدا نکردیم!</span>
                         ) : (
                             <span className='font-EstedadMedium sm:font-EstedadBold text-xl sm:text-2xl text-Gray-8 mb-5'>
@@ -93,15 +84,15 @@ export default function SearchProducts() {
                                 <GridLoader color='#417f56' />
                             </div>
                         ) : (
-                            products.length === 0 ? (
+                            filterProducts.length === 0 ? (
                                 <img className='sm:w-80 w-72 h-72 sm:h-80 md:w-auto md:h-auto' src="/Img/svg/searchbar-img.svg" alt="Search Not Found" />
                             ) : (
                                 <>
                                     <div className='min-h-56 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6'>
                                         {
-                                            products.map((product) => (
+                                            filterProducts.map((product) => (
                                                 <div key={product.id}>
-                                                    <SearchBox addToCart={addToCart} product={product} title={product.title} price={product.price} src={product.imagemain} description={product.description} discount={product.discount} />
+                                                    <SearchBox addToCart={addToCart} product={product} title={product.title} price={product.price} src={product.src} description={product.description} discount={product.discount} percent={product.percent} />
                                                 </div>
                                             ))
                                         }

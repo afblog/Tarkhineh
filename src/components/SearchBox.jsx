@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function SearchBox({ title, price, src, description, discount, addToCart, product }) {
+export default function SearchBox({ title, price, src, description, discount, addToCart, product, percent }) {
 
     const toPersianDigits = (num) => num.toLocaleString("fa-IR");
 
@@ -25,7 +25,7 @@ export default function SearchBox({ title, price, src, description, discount, ad
                             }</del>
                             <span className='bg-ErrorExtralight px-1.5 text-Error rounded-lg'>
                                 {
-                                    discount && '٪۱۵'
+                                    discount && `٪${toPersianDigits(percent)}`
                                 }
                             </span>
                         </div>
@@ -63,8 +63,17 @@ export default function SearchBox({ title, price, src, description, discount, ad
                         <div className='flex items-center justify-between mb-2'>
                             <span className='text-sm font-EstedadMedium text-Gray-8'>{title}</span>
                             <div className='flex items-center gap-x-1 font-EstedadRegular text-xs'>
-                                <del className='text-Gray-5'>۱۸۵٬۰۰۰</del>
-                                <span className='bg-ErrorExtralight px-1.5 text-Error rounded-lg'>%۱۵</span>
+                                <del className='text-Gray-5'>
+                                    {
+                                        discount && toPersianDigits(discount)
+                                    }
+                                </del>
+                                <span className='bg-ErrorExtralight px-1.5 text-Error rounded-lg'>
+                                    {
+                                        discount && `٪${toPersianDigits(percent)}`
+                                    }
+
+                                </span>
                             </div>
                         </div>
                         <div className='flex items-center justify-between font-EstedadRegular text-xs'>

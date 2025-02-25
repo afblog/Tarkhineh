@@ -57,7 +57,7 @@ export default function ShoppingCart() {
                                                 {
                                                     cart.length > 0 && cart.map((item) => (
                                                         <div key={item.id}>
-                                                            <ShoppingBoxCart removeFromCart={removeFromCart} productID={item.id} updateQuantity={updateQuantity} quantity={toPersianDigits(item.quantity)} title={item.title} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} toPersianDigits={toPersianDigits} />
+                                                            <ShoppingBoxCart removeFromCart={removeFromCart} productID={item.id} updateQuantity={updateQuantity} quantity={toPersianDigits(item.quantity)} title={item.title} src={item.src} price={item.price} description={item.description} discount={item.discount} toPersianDigits={toPersianDigits} percent={item.percent}/>
                                                         </div>
                                                     ))
                                                 }
