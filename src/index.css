@@ -55,6 +55,10 @@
 }
 
 @layer components {
+  .no-select {
+    user-select: none;
+  }
+
   .rtl {
     text-align: right;
     direction: rtl;

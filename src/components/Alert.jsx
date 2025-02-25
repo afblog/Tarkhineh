@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Alert = ({ message, type, onClose, duration = 3000 }) => {
+const Alert = ({ message, type, onClose, duration = 1500 }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             onClose();
