@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState, useContext } from 'react'
 import Footer from '../components/Footer'
 import { GlobalContext } from '../Contexts/GlobalContext'
-import { MainCourse } from '../products'
+import { mainCourse, appetizer, dessert, drink } from '../products'
 
 export default function Menu() {
 
@@ -108,7 +108,7 @@ export default function Menu() {
                   </TitleMenuBox>
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      MainCourse.iranianCuisine.map((item) => (
+                      mainCourse.iranianCuisine.map((item) => (
                         <div key={item.id}>
                           <MenuPageBox product={item} title={item.title} description={item.description} src={item.src} price={item.price} discount={item.discount} percent={item.percent} />
                         </div>
@@ -122,7 +122,7 @@ export default function Menu() {
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
 
-                      MainCourse.nonIranianFoods.map((item) => (
+                      mainCourse.nonIranianFoods.map((item) => (
                         <div key={item.id}>
                           <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
                         </div>
@@ -135,7 +135,7 @@ export default function Menu() {
                   <TitleMenuBox title="پیتزاها" />
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      MainCourse.pizzas.map((item) => (
+                      mainCourse.pizzas.map((item) => (
                         <div key={item.id}>
                           <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
                         </div>
@@ -148,9 +148,9 @@ export default function Menu() {
                   <TitleMenuBox title="ساندویچ‌ها" />
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      MainCourse.sandwiches.map((item) => (
+                      mainCourse.sandwiches.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent}/>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
                         </div>
                       ))
                     }
@@ -178,18 +178,11 @@ export default function Menu() {
                   </TitleMenuBox>
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      iranianAppetizer.length > 0 ? (
-                        iranianAppetizer.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+                      appetizer.iranianAppetizer.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                        </div>
+                      ))
                     }
                   </div>
                 </div>
@@ -197,18 +190,11 @@ export default function Menu() {
                   <TitleMenuBox title="پیش غذاهای غیر ایرانی"></TitleMenuBox>
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      nonIranianAppetizer.length > 0 ? (
-                        nonIranianAppetizer.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+                      appetizer.nonIranianAppetizer.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                        </div>
+                      ))
                     }
                   </div>
                 </div>
@@ -235,20 +221,11 @@ export default function Menu() {
                   </TitleMenuBox>
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      iranianDessert.length > 0 ? (
-                        iranianDessert.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+                      dessert.iranianDessert.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                        </div>
+                      ))
                     }
                   </div>
                 </div>
@@ -256,20 +233,11 @@ export default function Menu() {
                   <TitleMenuBox title="دسرهای غیر ایرانی"></TitleMenuBox>
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      nonIranianDessert.length > 0 ? (
-                        nonIranianDessert.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+                      dessert.nonIranianDessert.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                        </div>
+                      ))
                     }
                   </div>
                 </div>
@@ -295,41 +263,11 @@ export default function Menu() {
                   </TitleMenuBox>
                   <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
                     {
-                      iranianDrink.length > 0 ? (
-                        iranianDrink.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
-                    }
-                  </div>
-                </div>
-                <div className='mt-4 md:mt-10'>
-                  <TitleMenuBox title="نوشیدنی های غیر ایرانی"></TitleMenuBox>
-                  <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mt-6'>
-                    {
-                      nonIranianDrink.length > 0 ? (
-                        nonIranianDrink.map((item) => (
-                          <div key={item.id}>
-                            <MenuPageBox title={item.title} product={item} src={item.imagemain} price={item.price} description={item.description} discount={item.discount} loading={loading} />
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                          <MenuPageBox loading="false" />
-                        </>
-                      )
+                      drink.iranianDrink.map((item) => (
+                        <div key={item.id}>
+                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                        </div>
+                      ))
                     }
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-const MainCourse = {
+const mainCourse = {
   iranianCuisine: [
     {
       id: 1,
@@ -296,4 +296,166 @@ const MainCourse = {
   ],
 };
 
-export { MainCourse };
+const appetizer = {
+  iranianAppetizer: [
+    {
+      id: 1,
+      title: "خورشت ماست",
+      description:
+        "پیاز، گوشت گوسفند، زعفران، ماست پرچرب، مغز گردو، خلال بادام و گلاب",
+      src: "https://snapp.ir/blog/wp-content/uploads/2023/10/%D8%AE%D9%88%D8%B1%D8%B4%D8%AA-%D9%85%D8%A7%D8%B3%D8%AA.jpg",
+      price: 105000,
+      discount: 135000,
+      percent: 20,
+    },
+    {
+      id: 2,
+      title: "قارنی یاریخ",
+      description: "بادمجان، گوجه، سیر، پیاز، گوشت چرخ کرده، نخود یا لوبیا",
+      src: "https://snapp.ir/blog/wp-content/uploads/2023/10/%D9%82%D8%A7%D8%B1%D9%86%DB%8C-%DB%8C%D8%A7%D8%B1%DB%8C%D8%AE.jpg",
+      price: 136000,
+      discount: 150000,
+      percent: 18,
+    },
+    {
+      id: 3,
+      title: "سوپ دال عدس",
+      description:
+        "دال عدس، رب گوجه، سیب‌زمینی، هویج، برنج نیم‌دانه، خامه، نمک و فلفل",
+      src: "https://snapp.ir/blog/wp-content/uploads/2023/10/%D8%B3%D9%88%D9%BE-%D8%AF%D8%A7%D9%84-%D8%B9%D8%AF%D8%B3.jpg",
+      price: 95000,
+    },
+  ],
+  nonIranianAppetizer: [
+    {
+      id: 1,
+      title: "گوشت‌قلقلی سوئدی",
+      description: "جعفری، گوشت چرخ کرده، خامه، پیاز، سیر",
+      src: "https://snapp.ir/blog/wp-content/uploads/2023/10/%DA%AF%D9%88%D8%B4%D8%AA%E2%80%8C%D9%82%D9%84%D9%82%D9%84%DB%8C-%D8%B3%D9%88%D8%A6%D8%AF%DB%8C.jpg",
+      price: 180000,
+      discount: 205000,
+      percent: 30,
+    },
+    {
+      id: 2,
+      title: "نان سیر تخت",
+      description: "کره، پنیر چدار، سیر، پارامزان، ریحان",
+      src: "https://snapp.ir/blog/wp-content/uploads/2023/10/%D9%86%D8%A7%D9%86-%D8%B3%DB%8C%D8%B1-%D8%AA%D8%AE%D8%AA.jpg",
+      price: 110000,
+    },
+    {
+      id: 3,
+      title: "سینی سبزیجات",
+      description: "تربچه، شلغم، گلم، خیار، ماست یونانی، هویج، بروکلی",
+      src: "https://snapp.ir/blog/wp-content/uploads/2023/10/%D8%B3%DB%8C%D9%86%DB%8C-%D8%B3%D8%A8%D8%B2%DB%8C%D8%AC%D8%A7%D8%AA.jpg",
+      price: 80000,
+    },
+    {
+      id: 4,
+      title: "گراتن سوسیس و سیب‌زمینی",
+      description: "سوسیس، سیب زمینی، پنیر پیتزا، ادویه مخصوص",
+      src: "https://snapp.ir/blog/wp-content/uploads/2023/10/%DA%AF%D8%B1%D8%A7%D8%AA%D9%86-%D8%B3%D9%88%D8%B3%DB%8C%D8%B3-%D9%88-%D8%B3%DB%8C%D8%A8%E2%80%8C%D8%B2%D9%85%DB%8C%D9%86%DB%8C.jpg",
+      price: 105000,
+      discount: 135000,
+      percent: 20,
+    },
+  ],
+};
+
+const dessert = {
+  iranianDessert: [
+    {
+      id: 1,
+      title: "حلوا اوماج",
+      description: "آرد، شکر، آب، گلاب، گل محمدی",
+      src: "https://blog.okcs.com/wp-content/uploads/2022/01/%D8%AD%D9%84%D9%88%D8%A7-%D8%A7%D9%88%D9%85%D8%A7%D8%AC.jpg",
+      price: 65000,
+    },
+    {
+      id: 2,
+      title: "حلوای هویج",
+      description: "آرد، شکر، آب، گلاب، خلال پسته",
+      src: "https://blog.okcs.com/wp-content/uploads/2022/01/Halva-Havij-1280x720-min.jpg",
+      price: 85000,
+      discount: 100000,
+      percent: 15,
+    },
+    {
+      id: 3,
+      title: "باقلوا پرچمی قزوین",
+      description: "گلاب، شیر، زعفران، پودر پسته، پودر بادام",
+      src: "https://blog.okcs.com/wp-content/uploads/2020/12/baghlava-ghazvin2-e1607195931506.jpg",
+      price: 85000,
+    },
+    {
+      id: 4,
+      title: "شیر برنج",
+      description: "شیر، برنج، زعفران، پسته، گل محمدی",
+      src: "https://blog.okcs.com/wp-content/uploads/2021/04/shir-berenj-zaferani-min.jpg",
+      price: 60000,
+    },
+  ],
+  nonIranianDessert: [
+    {
+      id: 1,
+      title: "پاناکوتا",
+      description: "شیر، خامه، وانیل، گلاب، توت فرنگی",
+      src: "https://kalleh.com/book/wp-content/uploads/sites/2/2023/10/diffrent-italian-panna-cotta.jpg",
+      price: 105000,
+      discount: 135000,
+      percent: 20,
+    },
+    {
+      id: 2,
+      title: "کاسترد وانیلی",
+      description: "شیر، زرده تخم مرغ، شکر، نشاسته ذرت، کره و وانیل",
+      src: "https://blog.okcs.com/wp-content/uploads/2022/03/3-4.jpg",
+      price: 110000,
+      discount: 125000,
+      percent: 8,
+    },
+    {
+      id: 3,
+      title: "تیرامیسو",
+      description:
+        "پنیر ماسکارپونه، قهوه اسپرسو، بیسکوییت لیدی فینگر، پودر کاکائو",
+      src: "https://blog.okcs.com/wp-content/uploads/2018/08/shutterstock_405480988-1.jpg",
+      price: 120000,
+    },
+    {
+      id: 4,
+      title: "ترافل",
+      description: "بیسکویت ساقه طلایی، کره بادام زمینی، پودر کاکائو، شیر",
+      src: "https://blog.okcs.com/wp-content/uploads/2020/04/8f82df9743fa395611e799b0430d9f0f.jpg",
+      price: 93000,
+    },
+  ],
+};
+
+const drink = {
+  iranianDrink: [
+    {
+      id: 1,
+      title: "شربت زعفران",
+      description: "آب، گلاب، زعفران، تخم شربتی",
+      src: "https://alis.ir/wp-content/uploads/2020/10/mb.jpg",
+      price: 35000,
+    },
+    {
+      id: 2,
+      title: "شربت خاکشیر",
+      description: "آب، گلاب، خاک شیر، تخم شربتی",
+      src: "https://alis.ir/wp-content/uploads/2020/10/health-tourism-khakeshir.jpg",
+      price: 48000,
+    },
+    {
+      id: 3,
+      title: "چای گیاهی",
+      description: "چای گیاهی اصل",
+      src: "https://alis.ir/wp-content/uploads/2020/10/tea.jpg",
+      price: 15000,
+    },
+  ],
+};
+
+export { mainCourse, appetizer, dessert, drink };
