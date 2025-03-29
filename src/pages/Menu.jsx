@@ -110,7 +110,7 @@ export default function Menu() {
                     {
                       mainCourse.iranianCuisine.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox product={item} title={item.title} description={item.description} src={item.src} price={item.price} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
@@ -124,7 +124,7 @@ export default function Menu() {
 
                       mainCourse.nonIranianFoods.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
@@ -137,7 +137,7 @@ export default function Menu() {
                     {
                       mainCourse.pizzas.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
@@ -150,7 +150,7 @@ export default function Menu() {
                     {
                       mainCourse.sandwiches.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
@@ -180,7 +180,7 @@ export default function Menu() {
                     {
                       appetizer.iranianAppetizer.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
@@ -192,7 +192,7 @@ export default function Menu() {
                     {
                       appetizer.nonIranianAppetizer.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
@@ -223,7 +223,7 @@ export default function Menu() {
                     {
                       dessert.iranianDessert.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
@@ -235,7 +235,7 @@ export default function Menu() {
                     {
                       dessert.nonIranianDessert.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
@@ -265,7 +265,7 @@ export default function Menu() {
                     {
                       drink.iranianDrink.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox title={item.title} product={item} src={item.src} price={item.price} description={item.description} discount={item.discount} percent={item.percent} />
+                          <MenuPageBox {...item} />
                         </div>
                       ))
                     }
