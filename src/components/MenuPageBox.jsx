@@ -101,7 +101,7 @@ export default function MenuPageBox({ title, src, price, description, discount, 
                                     <button onClick={() => {
                                         setIsAddShoppingCart(true)
                                         addToCart(product)
-
+                                        console.log(discount, percent);  
                                     }} className='py-1.5 px-1 md:px-2 xl:px-14 bg-Primary text-white text-[10px] md:text-xs lg:text-base font-EstedadRegular lg:font-EstedadMedium rounded-sm cursor-pointer hover:bg-Shade-1 transition-all text-nowrap'>افزودن به سبد خرید</button>
                                 )
                             }
