@@ -110,7 +110,7 @@ export default function Menu() {
                     {
                       mainCourse.iranianCuisine.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} />
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }
