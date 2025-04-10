@@ -10,7 +10,10 @@ export default function MenuPageBox({ title, src, price, description, discount, 
 
     const [isLike, setIsLike] = useState(false)
 
-    const toPersianDigits = (num) => num.toLocaleString("fa-IR");
+    const toPersianDigits = (num) => {
+        if (typeof num !== "number") return "";
+        return num.toLocaleString("fa-IR");
+    };
 
 
     return (
