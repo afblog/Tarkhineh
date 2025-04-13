@@ -2,10 +2,11 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { GlobalContext } from '../Contexts/GlobalContext'
+import { useUI } from '../Contexts/UIContext'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import IranMap from '../components/IranMap'
 import Alert from '../components/Alert'
 
@@ -44,6 +45,8 @@ export default function Profile() {
         );
     };
 
+    const { isAlert, alertMsg, setAlertMsg, setIsAlert } = useUI()
+
     const {
         isUserProfil,
         isUserOrder,
@@ -54,10 +57,7 @@ export default function Profile() {
         userInterestsHandler,
         userAddressHandler,
         logoutHandler,
-        isAlert,
-        alertMsg,
-        setAlertMsg,
-        setIsAlert
+
     } = useContext(GlobalContext)
 
     const editUserData = async (e) => {

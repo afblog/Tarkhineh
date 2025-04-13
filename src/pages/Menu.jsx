@@ -4,7 +4,7 @@ import Alert from '../components/Alert'
 import MenuPageBox from '../components/MenuPageBox'
 import TitleMenuBox from '../components/TitleMenuBox'
 import { Link, useNavigate } from 'react-router-dom'
-import { useEffect, useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import Footer from '../components/Footer'
 import { GlobalContext } from '../Contexts/GlobalContext'
 import { mainCourse, appetizer, dessert, drink } from '../products'
@@ -124,7 +124,7 @@ export default function Menu() {
 
                       mainCourse.nonIranianFoods.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} product={item}/>
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }
@@ -137,7 +137,7 @@ export default function Menu() {
                     {
                       mainCourse.pizzas.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} product={item}/>
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }
@@ -150,7 +150,7 @@ export default function Menu() {
                     {
                       mainCourse.sandwiches.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} product={item}/>
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }
@@ -180,7 +180,7 @@ export default function Menu() {
                     {
                       appetizer.iranianAppetizer.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} product={item}/>
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }
@@ -192,7 +192,7 @@ export default function Menu() {
                     {
                       appetizer.nonIranianAppetizer.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} product={item}/>
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }
@@ -223,7 +223,7 @@ export default function Menu() {
                     {
                       dessert.iranianDessert.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} product={item}/>
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }
@@ -235,7 +235,7 @@ export default function Menu() {
                     {
                       dessert.nonIranianDessert.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} product={item}/>
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }
@@ -265,7 +265,7 @@ export default function Menu() {
                     {
                       drink.iranianDrink.map((item) => (
                         <div key={item.id}>
-                          <MenuPageBox {...item} product={item}/>
+                          <MenuPageBox {...item} product={item} />
                         </div>
                       ))
                     }

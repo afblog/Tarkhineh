@@ -4,8 +4,7 @@ import Alert from '../components/Alert'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { Link, useNavigate } from 'react-router-dom'
 import InputElem from '../components/InputElem'
-import { GlobalContext } from '../Contexts/GlobalContext'
-import { useContext } from 'react'
+import { useUI } from '../Contexts/UIContext'
 
 export default function Login() {
 
@@ -13,7 +12,7 @@ export default function Login() {
 
     const [isLoader, setIsLoader] = useState(false)
 
-    const { isAlert, alertMsg, setIsAlert, setAlertMsg, } = useContext(GlobalContext)
+    const { isAlert, alertMsg, setIsAlert, setAlertMsg, } = useUI()
 
     const [isUsernameInputActive, setIsUsernameInputActive] = useState(false)
     const [isUsernameError, setIsUsernameError] = useState(true)

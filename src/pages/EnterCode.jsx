@@ -3,12 +3,11 @@ import Register from '../components/Register'
 import Alert from '../components/Alert'
 import { Link } from 'react-router-dom'
 import { useRef } from 'react'
-import { GlobalContext } from '../Contexts/GlobalContext'
-import { useContext } from 'react'
+import { useUI } from '../Contexts/UIContext'
 
 export default function EnterCode() {
 
-    const { isAlert, setIsAlert } = useContext(GlobalContext)
+    const { isAlert, setIsAlert } = useUI()
 
     const inputRefs = useRef([]);
 

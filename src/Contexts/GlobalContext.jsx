@@ -5,9 +5,6 @@ export const GlobalContext = createContext();
 
 export function GlobalContextProvider({ children }) {
 
-  const [isAlert, setIsAlert] = useState(null)
-  const [alertMsg, setAlertMsg] = useState('')
-
   const [isLogin, setIsLogin] = useState(true)
 
   const [loading, setLoading] = useState(true);
@@ -136,10 +133,6 @@ export function GlobalContextProvider({ children }) {
       isAppetizer,
       isDessert,
       isDrink,
-      isAlert,
-      alertMsg,
-      setIsAlert,
-      setAlertMsg,
       loading,
       setLoading,
       iranianDrink,

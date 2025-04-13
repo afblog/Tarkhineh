@@ -13,14 +13,14 @@ import SearchProducts from './pages/SearchProducts'
 import ShoppingCart from './pages/ShoppingCart'
 import Profile from './pages/Profile'
 import Contact from './pages/Contact'
-import { GlobalContextProvider } from './Contexts/GlobalContext'
+import { AppProvider } from './Contexts/AppProvider'
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
 
   return (
-    <GlobalContextProvider>
+    <AppProvider>
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -38,7 +38,7 @@ export default function App() {
         <Route path='/lost-password/enter-code' element={<EnterCode />} />
         <Route path='/lost-password/new-password' element={<NewPassword />} />
       </Routes>
-    </GlobalContextProvider>
+    </AppProvider>
   )
 }
 
