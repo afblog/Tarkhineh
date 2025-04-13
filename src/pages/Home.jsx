@@ -59,22 +59,22 @@ export default function Home() {
                 </form>
                 <h3 className='font-EstedadBold text-base md:text-2xl text-Gray-8 text-center mb-22 sm:mb-44'>منوی رستوران</h3>
                 <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-30 sm:gap-y-56 gap-x-6'>
-                  <div className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
+                  <Link to="/menu" onClick={mainCourseHandler} className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
                     <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="/Img/svg/menu-img-4.svg" alt="" />
-                    <Link to="/menu" onClick={mainCourseHandler} className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>غذای اصلی</Link>
-                  </div>
-                  <div className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
+                    <span className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>غذای اصلی</span>
+                  </Link>
+                  <Link to="/menu" onClick={appetizerHandler} className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
                     <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="/Img/svg/menu-img-3.svg" alt="" />
-                    <Link to="/menu" onClick={appetizerHandler} className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>پیش غذا</Link>
-                  </div>
-                  <div className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
+                    <span className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>پیش غذا</span>
+                  </Link>
+                  <Link to="/menu" onClick={dessertHandler} className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
                     <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-36' src="/Img/svg/menu-img-2.svg" alt="" />
-                    <Link to="/menu" onClick={dessertHandler} className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>دسر</Link>
-                  </div>
-                  <div className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
+                    <span className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>دسر</span>
+                  </Link>
+                  <Link to="/menu" onClick={drinkHandler} className='relative flex justify-center w-[152px] sm:w-[267px] h-20 sm:h-[160px] bg-Primary rounded-lg shadow-xl justify-self-center'>
                     <img className='w-30 h-30 sm:w-auto sm:h-auto absolute -top-16 sm:-top-48' src="/Img/svg/menu-img-1.svg" alt="" />
-                    <Link to="/menu" onClick={drinkHandler} className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>نوشیدنی</Link>
-                  </div>
+                    <span className='absolute -bottom-5 right-0 left-0 mx-auto flex items-center justify-center text-xs sm:text-xl text-Gray-8 font-EstedadMedium w-24 h-8 sm:w-[155px] sm:h-12 bg-Gray-2 rounded-sm shadow-md'>نوشیدنی</span>
+                  </Link>
                 </div>
               </section>
               {/* About Section */}
