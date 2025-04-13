@@ -4,15 +4,12 @@ import { useCart } from '../Contexts/CartContext';
 export default function MenuPageBox({ title, src, price, description, discount, product, percent }) {
 
     const { addToCart } = useCart()
-    
+
     const [isAddShoppingCart, setIsAddShoppingCart] = useState(false)
 
     const [isLike, setIsLike] = useState(false)
 
-    const toPersianDigits = (num) => {
-        if (num !== "number") return "";
-        return num.toLocaleString("fa-IR");
-    };
+    const toPersianDigits = (num) => num.toLocaleString("fa-IR");
 
 
     return (
@@ -40,7 +37,7 @@ export default function MenuPageBox({ title, src, price, description, discount, 
                                 {
                                     discount && percent ? (
                                         <>
-                                            <del className='text-Gray-4 text-[10px] md:text-sm font-EstedadRegular lg:text-base'>{toPersianDigits(discount)}</del>
+                                            <del className='text-Gray-4 text-base'>{toPersianDigits(discount)}</del>
                                             <span className='text-xs text-Error bg-ErrorExtralight px-1 rounded-full'>٪{toPersianDigits(percent)}</span>
                                         </>
                                     ) : ""
@@ -100,7 +97,6 @@ export default function MenuPageBox({ title, src, price, description, discount, 
                                     <button onClick={() => {
                                         setIsAddShoppingCart(true)
                                         addToCart(product)
-                                        console.log(discount, percent);
                                     }} className='py-1.5 px-1 md:px-2 xl:px-14 bg-Primary text-white text-[10px] md:text-xs lg:text-base font-EstedadRegular lg:font-EstedadMedium rounded-sm cursor-pointer hover:bg-Shade-1 transition-all text-nowrap'>افزودن به سبد خرید</button>
                                 )
                             }
