@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import ShoppingBoxCart from '../components/ShoppingBoxCart'
 import BoxGlobal from '../components/BoxGlobal'
 import ShoppingCartPayment from '../components/ShoppingCartPayment'
+import { useProducts } from '../Contexts/ProductContext'
 
 export default function ShoppingCart() {
 
@@ -16,7 +17,7 @@ export default function ShoppingCart() {
 
     const toPersianDigits = (num) => num.toLocaleString("fa-IR");
 
-    const { mainCourseHandler } = useContext(GlobalContext)
+    const { mainCourseHandler } = useProducts()
 
     const [isGlobalBox, setIsGlobalBox] = useState(false)
 
