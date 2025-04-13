@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Register from '../components/Register'
 import Alert from '../components/Alert'
 import { Link } from 'react-router-dom'

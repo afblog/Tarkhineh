@@ -1,45 +1,34 @@
+import { useState } from 'react'
 import Header from '../components/Header'
 import Slider from '../components/Slider'
 import Alert from '../components/Alert'
 import MenuPageBox from '../components/MenuPageBox'
 import TitleMenuBox from '../components/TitleMenuBox'
 import { Link, useNavigate } from 'react-router-dom'
-import { useState, useContext } from 'react'
 import Footer from '../components/Footer'
-import { GlobalContext } from '../Contexts/GlobalContext'
+import { useProducts } from '../Contexts/ProductContext'
+import { useUI } from '../Contexts/UIContext'
 import { mainCourse, appetizer, dessert, drink } from '../products'
 
 export default function Menu() {
-
   const {
     isMainCourse,
     isAppetizer,
     isDessert,
     isDrink,
-    isAlert,
-    alertMsg,
-    setAlertMsg,
-    setIsAlert,
-    loading,
-    setLoading,
-    iranianDrink,
-    nonIranianDrink,
-    iranianDessert,
-    nonIranianDessert,
-    iranianAppetizer,
-    nonIranianAppetizer,
     mainCourseHandler,
     appetizerHandler,
     dessertHandler,
     drinkHandler,
-  } = useContext(GlobalContext)
+  } = useProducts()
+
+  const {
+    isAlert,
+    alertMsg,
+    setIsAlert,
+  } = useUI()
 
   const navigate = useNavigate()
-
-  const [iranianCuisine, setIranianCuisine] = useState([])
-  const [nonIranianFoods, setNonIranianFoods] = useState([])
-  const [pizzas, setPizzas] = useState([])
-  const [sandwiches, setSandwiches] = useState([])
 
   const [searchInputValue, setSearchInputValue] = useState("")
 

@@ -1,12 +1,11 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { GlobalContext } from '../Contexts/GlobalContext'
 import { useUI } from '../Contexts/UIContext'
-import { useContext } from 'react'
+import { useAuth } from '../Contexts/AuthContext'
+import { useDashboard } from '../Contexts/DashboardContext'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import IranMap from '../components/IranMap'
 import Alert from '../components/Alert'
 
@@ -56,9 +55,9 @@ export default function Profile() {
         userOrderHandler,
         userInterestsHandler,
         userAddressHandler,
-        logoutHandler,
+    } = useDashboard()
 
-    } = useContext(GlobalContext)
+    const { logoutHandler } = useAuth()
 
     const editUserData = async (e) => {
         e.preventDefault()

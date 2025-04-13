@@ -3,12 +3,11 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SearchBox from '../components/SearchBox'
 import GridLoader from 'react-spinners/GridLoader'
-import { GlobalContext } from '../Contexts/GlobalContext'
-import { useContext } from 'react'
+import { useCart } from '../Contexts/CartContext'
 import { mainCourse, appetizer, dessert, drink } from '../products'
 
 export default function SearchProducts() {
-    const { addToCart } = useContext(GlobalContext)
+    const { addToCart } = useCart()
 
     const [isLoader, setIsLoader] = useState(false)
 

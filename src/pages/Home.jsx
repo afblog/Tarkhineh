@@ -4,14 +4,14 @@ import Slider from '../components/Slider'
 import BranchBox from '../components/BranchBox'
 import Footer from '../components/Footer'
 import { Link, useNavigate } from 'react-router-dom'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import SiteLoader from '../components/SiteLoader'
 import { useEffect } from 'react'
-import { GlobalContext } from '../Contexts/GlobalContext'
+import { useProducts } from '../Contexts/ProductContext'
 
 export default function Home() {
 
-  const { mainCourseHandler, appetizerHandler, dessertHandler, drinkHandler, } = useContext(GlobalContext)
+  const { mainCourseHandler, appetizerHandler, dessertHandler, drinkHandler, } = useProducts()
 
   const [isLoading, setIsLoading] = useState(true)
 

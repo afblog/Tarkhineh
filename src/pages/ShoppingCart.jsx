@@ -2,15 +2,21 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ShoppingBoxCart from '../components/ShoppingBoxCart'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
-import { GlobalContext } from '../Contexts/GlobalContext'
+import { useAuth } from '../Contexts/AuthContext'
+import { useCart } from '../Contexts/CartContext'
 import BoxGlobal from '../components/BoxGlobal'
 import { useState } from 'react'
 import ShoppingCartPayment from '../components/ShoppingCartPayment'
 
 export default function ShoppingCart() {
 
-    const { isLogin, mainCourseHandler, cart, setCart, updateQuantity, removeFromCart, totalPrice, toPersianDigits } = useContext(GlobalContext)
+    const { isLogin } = useAuth()
+
+    const { cart, setCart, updateQuantity, removeFromCart, totalPrice } = useCart()
+
+    const toPersianDigits = (num) => num.toLocaleString("fa-IR");
+
+    const { mainCourseHandler } = useContext(GlobalContext)
 
     const [isGlobalBox, setIsGlobalBox] = useState(false)
 
@@ -57,7 +63,7 @@ export default function ShoppingCart() {
                                                 {
                                                     cart.length > 0 && cart.map((item) => (
                                                         <div key={item.id}>
-                                                            <ShoppingBoxCart removeFromCart={removeFromCart} productID={item.id} updateQuantity={updateQuantity} quantity={toPersianDigits(item.quantity)} title={item.title} src={item.src} price={item.price} description={item.description} discount={item.discount} toPersianDigits={toPersianDigits} percent={item.percent}/>
+                                                            <ShoppingBoxCart removeFromCart={removeFromCart} productID={item.id} updateQuantity={updateQuantity} quantity={toPersianDigits(item.quantity)} title={item.title} src={item.src} price={item.price} description={item.description} discount={item.discount} toPersianDigits={toPersianDigits} percent={item.percent} />
                                                         </div>
                                                     ))
                                                 }

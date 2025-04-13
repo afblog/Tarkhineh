@@ -1,31 +1,27 @@
-import React from 'react'
-import { useState, useContext } from 'react'
-import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
+import React, { useState } from 'react'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import Alert from './Alert'
-import { GlobalContext } from '../Contexts/GlobalContext'
 import BoxGlobal from './BoxGlobal'
+
+import { useAuth } from '../Contexts/AuthContext'
+import { useCart } from '../Contexts/CartContext'
+import { useDashboard } from '../Contexts/DashboardContext'
+import { useProducts } from '../Contexts/ProductContext'
+import { useUI } from '../Contexts/UIContext'
 
 export default function Header() {
 
+    const { isLogin, setIsLogin, logoutHandler, } = useAuth()
+    const { isAlert, alertMsg, setIsAlert, } = useUI()
+    const { cart } = useCart()
+    const { userProfilHandler, userOrderHandler, userInterestsHandler, userAddressHandler, } = useDashboard()
     const {
-        isLogin,
-        setIsLogin,
-        logoutHandler,
-        isAlert,
-        alertMsg,
-        cart,
-        setIsAlert,
         mainCourseHandler,
         appetizerHandler,
         dessertHandler,
         drinkHandler,
-        userProfilHandler,
-        userOrderHandler,
-        userInterestsHandler,
-        userAddressHandler,
-    } = useContext(GlobalContext)
+    } = useProducts()
 
     const [isOpenMenu, setIsOpenMenu] = useState(false)
 

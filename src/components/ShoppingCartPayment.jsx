@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { GlobalContext } from '../Contexts/GlobalContext'
-import { useContext } from 'react'
+import { useUI } from '../Contexts/UIContext'
 import Alert from './Alert'
 
 export default function ShoppingCartPayment() {
 
-    const { isAlert, setIsAlert, setAlertMsg, alertMsg } = useContext(GlobalContext)
+    const { isAlert, setIsAlert, setAlertMsg, alertMsg } = useUI()
 
     const closeAlert = () => setIsAlert(null)
 
