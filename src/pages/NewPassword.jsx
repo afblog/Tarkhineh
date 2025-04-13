@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Register from '../components/Register'
 import { Link } from 'react-router-dom'
+import Register from '../components/Register'
 import InputElem from '../components/InputElem'
 
 export default function NewPassword() {

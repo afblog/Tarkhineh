@@ -1,11 +1,11 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import ShoppingBoxCart from '../components/ShoppingBoxCart'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../Contexts/AuthContext'
 import { useCart } from '../Contexts/CartContext'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import ShoppingBoxCart from '../components/ShoppingBoxCart'
 import BoxGlobal from '../components/BoxGlobal'
-import { useState } from 'react'
 import ShoppingCartPayment from '../components/ShoppingCartPayment'
 
 export default function ShoppingCart() {

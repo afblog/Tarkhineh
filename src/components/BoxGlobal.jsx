@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function BoxGlobal({ children, close, headerTitle }) {
 
     return (

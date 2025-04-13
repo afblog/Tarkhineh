@@ -1,7 +1,4 @@
-
-
 export default function ShoppingBoxCart({ title, src, price, description, discount, toPersianDigits, productID, quantity, updateQuantity, removeFromCart, percent }) {
-
     return (
         <div className='rtl flex items-center xl:gap-x-8 h-[100px] lg:h-40 border border-solid border-Gray-4 hover:shadow-xl transition-all rounded-md shrink-0'>
             <div className='w-[92px] lg:w-52 h-full'>

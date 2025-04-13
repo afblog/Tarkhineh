@@ -1,11 +1,10 @@
-import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import { useUI } from '../Contexts/UIContext'
 import { useAuth } from '../Contexts/AuthContext'
 import { useDashboard } from '../Contexts/DashboardContext'
 import { useNavigate } from 'react-router-dom'
 import { useState, useRef } from 'react'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import IranMap from '../components/IranMap'
 import Alert from '../components/Alert'
 

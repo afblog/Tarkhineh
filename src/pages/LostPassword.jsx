@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Register from '../components/Register'
 import InputElem from '../components/InputElem'
 import Alert from '../components/Alert'
-import { useNavigate } from 'react-router-dom'
 
 export default function LostPassword() {
 

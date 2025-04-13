@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useUI } from '../Contexts/UIContext'
 import Register from '../components/Register'
 import Alert from '../components/Alert'
 import BeatLoader from 'react-spinners/BeatLoader'
-import { Link, useNavigate } from 'react-router-dom'
 import InputElem from '../components/InputElem'
-import { useUI } from '../Contexts/UIContext'
 
 export default function Login() {
 

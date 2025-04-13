@@ -4,7 +4,7 @@ import { useCart } from '../Contexts/CartContext';
 export default function MenuPageBox({ title, src, price, description, discount, product, percent }) {
 
     const { addToCart } = useCart()
-
+    
     const [isAddShoppingCart, setIsAddShoppingCart] = useState(false)
 
     const [isLike, setIsLike] = useState(false)

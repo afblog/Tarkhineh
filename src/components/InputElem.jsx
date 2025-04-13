@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function InputElem({ isActive, errorMsg, isError, blur, value, focus, change, type, placeholder, children }) {
     return (
         <>
@@ -11,6 +9,7 @@ export default function InputElem({ isActive, errorMsg, isError, blur, value, fo
                 !isError && (
                     <p className='text-Errorlight text-xs md:text-sm font-EstedadLight text-start mt-1 mb-4'>{errorMsg}</p>
                 )
-            }</>
+            }
+        </>
     )
 }

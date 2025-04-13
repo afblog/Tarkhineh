@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function TitleMenuBox({ title, children }) {
     return (
         <div className='w-full flex items-center justify-between'>

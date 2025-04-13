@@ -1,14 +1,14 @@
 import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useProducts } from '../Contexts/ProductContext'
+import { useUI } from '../Contexts/UIContext'
+import { mainCourse, appetizer, dessert, drink } from '../products'
 import Header from '../components/Header'
 import Slider from '../components/Slider'
 import Alert from '../components/Alert'
 import MenuPageBox from '../components/MenuPageBox'
 import TitleMenuBox from '../components/TitleMenuBox'
-import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer'
-import { useProducts } from '../Contexts/ProductContext'
-import { useUI } from '../Contexts/UIContext'
-import { mainCourse, appetizer, dessert, drink } from '../products'
 
 export default function Menu() {
   const {

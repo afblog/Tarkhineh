@@ -1,13 +1,11 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useProducts } from '../Contexts/ProductContext'
 import Header from '../components/Header'
 import Slider from '../components/Slider'
 import BranchBox from '../components/BranchBox'
 import Footer from '../components/Footer'
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 import SiteLoader from '../components/SiteLoader'
-import { useEffect } from 'react'
-import { useProducts } from '../Contexts/ProductContext'
 
 export default function Home() {
 

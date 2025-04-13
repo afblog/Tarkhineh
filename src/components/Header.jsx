@@ -1,21 +1,16 @@
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import Alert from './Alert'
 import BoxGlobal from './BoxGlobal'
 
-import { useAuth } from '../Contexts/AuthContext'
 import { useCart } from '../Contexts/CartContext'
-import { useDashboard } from '../Contexts/DashboardContext'
 import { useProducts } from '../Contexts/ProductContext'
 import { useUI } from '../Contexts/UIContext'
 
 export default function Header() {
-
-    const { isLogin, setIsLogin, logoutHandler, } = useAuth()
     const { isAlert, alertMsg, setIsAlert, } = useUI()
     const { cart } = useCart()
-    const { userProfilHandler, userOrderHandler, userInterestsHandler, userAddressHandler, } = useDashboard()
     const {
         mainCourseHandler,
         appetizerHandler,
@@ -24,9 +19,7 @@ export default function Header() {
     } = useProducts()
 
     const [isOpenMenu, setIsOpenMenu] = useState(false)
-
     const [isSearch, setIsSearch] = useState(false)
-
     const [searchInputValue, setSearchInputValue] = useState('')
 
     const toPersianDigits = (num) => num.toLocaleString("fa-IR");
@@ -36,7 +29,6 @@ export default function Header() {
 
     const isShappingCartPage = location.pathname === '/shoppingcart'
     const isSearchPage = location.pathname === '/searchbar'
-    const isProfilePage = location.pathname === '/profile'
 
     const searchBoxHandler = () => {
         sessionStorage.setItem('search-value', searchInputValue)
@@ -53,9 +45,8 @@ export default function Header() {
 
     const openMenu = () => setIsOpenMenu(true)
     const openSearchBox = () => setIsSearch(true)
-
+    
     const closeSearchBox = () => setIsSearch(false)
-
     const closeAlert = () => setIsAlert(null)
 
     return (

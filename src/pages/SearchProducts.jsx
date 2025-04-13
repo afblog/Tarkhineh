@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { useCart } from '../Contexts/CartContext'
+import { mainCourse, appetizer, dessert, drink } from '../products'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SearchBox from '../components/SearchBox'
 import GridLoader from 'react-spinners/GridLoader'
-import { useCart } from '../Contexts/CartContext'
-import { mainCourse, appetizer, dessert, drink } from '../products'
 
 export default function SearchProducts() {
     const { addToCart } = useCart()

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { useUI } from '../Contexts/UIContext'
 import Alert from './Alert'
